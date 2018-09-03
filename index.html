@@ -8,6 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
         integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
 </head>
 
 <body>
@@ -17,15 +18,19 @@
                 <form>
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Name</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Name">
+                        <input type="text" class="form-control" id="name" placeholder="Name">
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Email address</label>
-                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                        <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Phone Number</label>
+                        <input type="tel" class="form-control" id="phone" placeholder="(123)456-7890">
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Type of Pet</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
+                        <select class="form-control" id="pet-type">
                             <option>Dog</option>
                             <option>Cat</option>
                             <option>Other</option>
@@ -33,40 +38,34 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Name Of Pet</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Pet Name">
+                        <input type="text" class="form-control" id="pet-name" placeholder="Pet Name">
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Breed</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Breed">
+                        <input type="text" class="form-control" id="breed" placeholder="Breed">
                     </div>
-                    <div class="form-group">
-                        <label for="exampleFormControlInput1">Phone Number</label>
-                        <input type="tel" class="form-control" id="exampleFormControlInput1" placeholder="(123)456-7890">
-                    </div>
+
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Location Last Seen</label>
-                        <input type="Text" class="form-control" id="exampleFormControlInput1" placeholder="Last Seen">
+                        <input type="Text" class="form-control" id="last-seen-location" placeholder="Last Seen">
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Date Last Seen</label>
-                        <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="Last Seen">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleFormControlInput1">Email address</label>
-                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                        <input type="date" class="form-control" id="last-seen-date" placeholder="Last Seen">
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Description</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control" id="description" rows="3"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Reward</label>
-                        <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="$">
+                        <input type="number" class="form-control" id="reward" placeholder="$">
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Image</label>
-                        <input type="image" class="form-control" id="exampleFormControlInput1">
+                        <input type="file" class="form-control" id="file-upload">
                     </div>
+                    <button class="btn btn-primary float-right" id="add-user">Submit</button>
                 </form>
             </div>
         </div>
@@ -78,11 +77,13 @@
         crossorigin="anonymous"></script>
     <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
         crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"> </script>
     <script>
         $(document).ready(function () {
             $('body').bootstrapMaterialDesign();
         });
     </script>
+
 </body>
 
 </html>
