@@ -1,32 +1,60 @@
-// Instructions:
+$(document).ready(function () {
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyAuLgvbFiomHN1mZoxrS6YYcvPI1oGznqw",
+        authDomain: "homewardfound-e93a2.firebaseapp.com",
+        databaseURL: "https://homewardfound-e93a2.firebaseio.com",
+        projectId: "homewardfound-e93a2",
+        storageBucket: "homewardfound-e93a2.appspot.com",
+        messagingSenderId: "1031249661778"
+    };
+    firebase.initializeApp(config);
 
-// Build Something Awesome
-// Requirements:
+    var database = firebase.database();
+    //Button for adding info to profile. 
+    $("#add-user").on("click", function (event) {
+        event.preventDefault();
+        //grab user input
+        var name = $("#name").val().trim();
+        var email = $("#email").val().trim();
+        var petName = $("#pet-name").val().trim();
+        var petType = $("#pet-type").val().trim();
+        var breed = $("#breed").val().trim();
+        var phone = $("#phone").val().trim();
+        var lastLoc = $("#last-seen-location").val().trim();
+        var lastDate = $("#last-seen-date").val().trim();
+        var description = $("#description").val().trim();
+        var reward = $("#reward").val().trim();
+        var photo = $("#file-upload").val().trim();
 
-// Must uses at least two APIs
+        var newUser = {
+            name: name,
+            email: email,
+            petName: petName,
+            petType: petType,
+            breed: breed,
+            phone: phone,
+            lastLoc: lastLoc,
+            lastDate: lastDate,
+            description: description,
+            reward: reward,
+            photo: photo
+        };
 
-// Must use AJAX to pull data
-// facebook API and google Maps API
+        database.ref().push(newUser);
+        console.log(newUser);
 
-// Must utilize at least one new library or technology that we haven’t discussed
-//image recognition software or utilizing a contact user method that encrypts user info
-// Must have a polished frontend / UI
+        $("#name").val("");
+        $("#email").val("");
+        $("#pet-name").val("");
+        $("#pet-type").val("");
+        $("#breed").val("");
+        $("#phone").val("");
+        $("#last-seen-location").val("");
+        $("#last-seen-date").val("");
+        $("#description").val("");
+        $("#reward").val("");
+        $("#file-upload").val("");
 
-// Must meet good quality coding standards (indentation, scoping, naming)
-
-// Must NOT use alerts, confirms, or prompts (look into modals!)
-
-// Must have some sort of repeating element (table, columns, etc)
-
-// Must use Bootstrap or Alternative CSS Framework
-
-// Must be Deployed (GitHub Pages or Firebase)
-
-// Must have User Input Validation
-
-// Presentation Date:
-
-// Two Weeks from Today
-// Message Input
-
-// Message #general
+    });
+})
