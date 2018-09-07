@@ -11,6 +11,8 @@ $(document).ready(function () {
     firebase.initializeApp(config);
 
     var database = firebase.database();
+
+
     //Button for adding info to profile. 
     $("#add-user").on("click", function (event) {
         event.preventDefault();
