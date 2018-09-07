@@ -11,6 +11,49 @@ $(document).ready(function () {
     firebase.initializeApp(config);
 
     var database = firebase.database();
+    const auth = firebase.auth();
+
+    //Get elements for login page
+    const txtEmail = $("#txtEmail");
+    const txtPassword = $("#txtPassword");
+    const btnLogin = $("#btnLogin");
+    const btnSignUp = $("#btnSignUp");
+    const btnLogout = $("#btnLogout");
+
+    //log in event 
+    btnLogin.on("click", e => {
+        const email = txtEmail.val();
+        const pass = txtPassword.val();
+        const promise = auth.signInWithEmailAndPassword(email, pass);
+        promise.catch(e => console.log(e.message));
+
+    })
+    // sign up event 
+    btnSignUp.on("click", e => {
+        const email = txtEmail.val();
+        const pass = txtPassword.val();
+        const promise = auth.createUserWithEmailAndPassword(email, pass);
+        promise.catch(e => console.log(e.message));
+
+    })
+
+    //log out event 
+    btnLogout.on("click", e => {
+        firebase.auth().signOut();
+    })
+
+    //adding real time listener for when user is logged in vs. out
+    firebase.auth().onAuthStateChanged(firebaseUser => {
+        if (firebaseUser) {
+            console.log(firebaseUser);
+            btnLogout.classList.remove("hide");
+        } else {
+            console.log("not logged in");
+            btnLogout.classList.add("hide");
+        }
+    })
+
+
     //Button for adding info to profile. 
     $("#add-user").on("click", function (event) {
         event.preventDefault();
