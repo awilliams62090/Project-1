@@ -1,0 +1,61 @@
+/* Welcome */
+
+.page-bg {
+    background: image-url("login/gs-signup.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  #welcome #login-button {
+    white-space:normal !important;
+    word-wrap: break-word; 
+    line-height: 1.5;
+  }
+  #welcome .card {
+    width: 20rem;
+    margin: 5rem auto;
+    background-color: rgba(242,242,242,0.70);
+    transition: 1s;
+  }
+  
+  #welcome .card:hover {
+    width: 20rem;
+    margin: 5rem auto;
+    background-color: rgba(242,242,242,1);
+    transition: 1s;
+  }
+  
+  #welcome .form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+  }
+  #welcome .form-signin .checkbox {
+    font-weight: 400;
+  }
+  #welcome .form-signin .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+  }
+  #welcome .form-signin .form-control:focus {
+    z-index: 2;
+  }
+  #welcome .form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  #welcome .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
