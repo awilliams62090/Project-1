@@ -3,6 +3,8 @@ var ui = new firebaseui.auth.AuthUI(firebase.auth());
 // The start method will wait until the DOM is loaded.
 ui.start('#firebaseui-auth-container', uiConfig);
 
+var userID = '';
+
 function endSession() {
   firebase.auth().signOut().then(function () {
     console.log('Signed Out');
@@ -45,4 +47,16 @@ initApp = function () {
 
 window.addEventListener('load', function () {
   initApp()
+});
+
+document.addEventListener("DOMContentLoaded", function (event) {
+    // Get current userID
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+            userID = firebase.auth().currentUser.uid;
+            console.log(userID);
+        } else {
+            console.log('err: not logged in?');
+        }
+    });
 });

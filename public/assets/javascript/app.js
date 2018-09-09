@@ -1,4 +1,22 @@
-document.addEventListener("DOMContentLoaded", function(event) { 
+
+document.addEventListener("DOMContentLoaded", function (event) {
+
+    var imgURL = '';
+    var fileButton = document.getElementById('file-upload');
+
+        // Upload image
+    fileButton.addEventListener('change', function (e) {
+        // Get file
+        var file = e.target.files[0];
+        // Create a storage reference
+        var storageRef = firebase.storage().ref('images/' + userID + '-' + file.name);
+        // Get the download URL
+        storageRef.getDownloadURL().then(function(url) {
+            imgURL = url;
+          })
+        // Upload file
+        storageRef.put(file);
+    });
 
     //Button for adding info to profile. 
     $("#add-user").on("click", function (event) {
@@ -14,20 +32,22 @@ document.addEventListener("DOMContentLoaded", function(event) {
         var lastDate = $("#last-seen-date").val().trim();
         var description = $("#description").val().trim();
         var reward = $("#reward").val().trim();
-        var photo = $("#file-upload").val().trim();
 
         var newUser = {
             name: name,
+            userID: userID,
             email: email,
-            petName: petName,
-            petType: petType,
-            breed: breed,
-            phone: phone,
-            lastLoc: lastLoc,
-            lastDate: lastDate,
-            description: description,
-            reward: reward,
-            photo: photo
+            pet: {
+                petName: petName,
+                petTpye: petType,
+                breed: breed,
+                phone: phone,
+                lastLoc: lastLoc,
+                lastDate: lastDate,
+                description: description,
+                reward: reward,
+                imgURL: imgURL
+            }
         };
 
         database.ref().push(newUser);
@@ -46,4 +66,4 @@ document.addEventListener("DOMContentLoaded", function(event) {
         $("#file-upload").val("");
 
     });
-  });    
+});

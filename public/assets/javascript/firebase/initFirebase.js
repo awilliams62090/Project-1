@@ -6,4 +6,8 @@
         storageBucket: "homewardfound-e93a2.appspot.com",
         messagingSenderId: "1031249661778"
     };
+    
     firebase.initializeApp(config);
+
+    var database = firebase.database();
+    var storage = firebase.storage();
