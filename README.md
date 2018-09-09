@@ -4,16 +4,20 @@
 
 Reprehenderit duis ut commodo nulla quis sint est ipsum occaecat velit.
 
-### Setup development environment
+##### Install Firebase CLI:
 
-1. Setup Firebase CLI:
 `npm install -g firebase-tools`
+
+##### Setup Firebase CLI:
+
 `firebase login`
 
-2. Run local environment:
+##### Run local environment:
+
 `firebase serve`
 
-3. Deploy to live environment:
+##### Deploy to live environment:
+
 `firebase deploy`
 
 
