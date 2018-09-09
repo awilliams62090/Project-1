@@ -1,17 +1,4 @@
-$(document).ready(function () {
-    // Initialize Firebase
-    var config = {
-        apiKey: "AIzaSyAuLgvbFiomHN1mZoxrS6YYcvPI1oGznqw",
-        authDomain: "homewardfound-e93a2.firebaseapp.com",
-        databaseURL: "https://homewardfound-e93a2.firebaseio.com",
-        projectId: "homewardfound-e93a2",
-        storageBucket: "homewardfound-e93a2.appspot.com",
-        messagingSenderId: "1031249661778"
-    };
-    firebase.initializeApp(config);
-
-    var database = firebase.database();
-
+document.addEventListener("DOMContentLoaded", function(event) { 
 
     //Button for adding info to profile. 
     $("#add-user").on("click", function (event) {
@@ -59,4 +46,4 @@ $(document).ready(function () {
         $("#file-upload").val("");
 
     });
-})
+  });    

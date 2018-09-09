@@ -6,23 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-
-    <!-- Bootstrap MD -->
-    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
-        integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
     <!-- Firebase 5.4.2 -->
     <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
     <script type="text/javascript" src="assets/javascript/firebase/initFirebase.js"> </script>
     <!-- Firebase UI -->
     <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+    <!-- Firebase authentication -->
     <script src="assets/javascript/firebase/loginFirebase.js"></script>
     <script src="assets/javascript/firebase/authFirebase.js"></script>
+    <!-- application -->
     <script src="assets/javascript/app.js"></script>
+    <!-- Bootstrap MD -->
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+        integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <!-- Style overrides -->
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-    <!-- Navigation -->
+
     <header class="sticky-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="index.html">Homeward Found</a>
@@ -73,78 +76,33 @@
                 <div class="card my-4 p-5">
                     <div class="card-body">
                         <h4 class="card-title text-center">
-                            Browse...
+                            My profile...
                         </h4>
-                        <form>
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Name</label>
-                                <input type="text" class="form-control" id="name" placeholder="Name">
+                        <div class="row">
+                            <div class="col">
+                                <p>This is the profile page for <span class="account-details"></span></p>
                             </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Email address</label>
-                                <input type="email" class="form-control" id="email" placeholder="name@example.com">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Phone Number</label>
-                                <input type="tel" class="form-control" id="phone" placeholder="(123)456-7890">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlSelect1">Type of Pet</label>
-                                <select class="form-control" id="pet-type">
-                                    <option>Dog</option>
-                                    <option>Cat</option>
-                                    <option>Other</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Name Of Pet</label>
-                                <input type="text" class="form-control" id="pet-name" placeholder="Pet Name">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Breed</label>
-                                <input type="text" class="form-control" id="breed" placeholder="Breed">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Location Last Seen</label>
-                                <input type="Text" class="form-control" id="last-seen-location" placeholder="Last Seen">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Date Last Seen</label>
-                                <input type="date" class="form-control" id="last-seen-date" placeholder="Last Seen">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlTextarea1">Description</label>
-                                <textarea class="form-control" id="description" rows="3"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Reward</label>
-                                <input type="number" class="form-control" id="reward" placeholder="$">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Image</label>
-                                <input type="file" class="form-control" id="file-upload">
-                            </div>
-                            <button class="btn btn-primary float-right" id="add-user">Submit</button>
-                        </form>
+                        </div>
                     </div>
+                    <hr />
                 </div>
             </div>
         </div>
     </div>
+
+
+    </script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
     <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U"
         crossorigin="anonymous"></script>
     <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
         crossorigin="anonymous"></script>
-    <script type="text/javascript" src="assets/javascript/app.js"> </script>
     <script>
         $(document).ready(function () {
             $('body').bootstrapMaterialDesign();
         });
     </script>
-
 </body>
 
 </html>
