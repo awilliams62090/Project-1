@@ -48,6 +48,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="submit.html">Submit</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">My Pet</a>
+                    </li>
                 </ul>
                 <div class="d-inline my-2 my-lg-0">
                     <span id="sign-in-status"></span>
@@ -88,7 +91,7 @@
                             Browse...
                         </h4>
                         
-                        <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                        <table id="browsePets" class="table table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
                               <tr>
                                 <th class="th-sm"> Pet Name
@@ -110,16 +113,13 @@
                             </thead>
                             <tbody>
                               <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>Edinburgh</td>
-                                <td>61</td>
-                                <td>2011/04/25</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
                               </tr>
                             </tbody>
-                            <!-- <tfoot>
-                              do we need a footer? 
-                            </tfoot> -->
                           </table>
 
                     </div>
@@ -135,12 +135,13 @@
     <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
         crossorigin="anonymous"></script>
     <script type="text/javascript" src="assets/javascript/app.js"> </script>
+    <script type="text/javascript" src="assets/javascript/browse.js"> </script>
     <!-- MDBootstrap Datatables  -->
     <script type="text/javascript" src="assets/javascript/datatables.js"></script>
     <script>
         $(document).ready(function () {
             $('body').bootstrapMaterialDesign();
-            $('#dtBasicExample').DataTable();
+            $('#browsePets').DataTable();
             $('.dataTables_length').addClass('bs-select');
         });
     </script>

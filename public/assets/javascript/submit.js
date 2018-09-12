@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             email: email,
             pet: {
                 petName: petName,
-                petTpye: petType,
+                petType: petType,
                 breed: breed,
                 phone: phone,
                 lastLoc: lastLoc,

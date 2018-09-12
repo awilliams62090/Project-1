@@ -106,3 +106,31 @@
 [debug] [2018-09-11T00:25:54.450Z] <<< HTTP RESPONSE 200
 [info] i  hosting[homewardfound-e93a2]: Serving hosting files from: public
 [info] +  hosting[homewardfound-e93a2]: Local server: http://localhost:5000
+[debug] [2018-09-11T23:30:31.489Z] ----------------------------------------------------------------------
+[debug] [2018-09-11T23:30:31.528Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Alyssa Williams\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-09-11T23:30:31.529Z] CLI Version:   4.2.1
+[debug] [2018-09-11T23:30:31.529Z] Platform:      win32
+[debug] [2018-09-11T23:30:31.529Z] Node Version:  v8.11.3
+[debug] [2018-09-11T23:30:31.559Z] Time:          Tue Sep 11 2018 17:30:31 GMT-0600 (Mountain Daylight Time)
+[debug] [2018-09-11T23:30:31.560Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-09-11T23:30:32.093Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-09-11T23:30:32.097Z] > authorizing via signed-in user
+[debug] [2018-09-11T23:30:32.105Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-09-11T23:30:32.106Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+
+[debug] [2018-09-11T23:30:33.003Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-11T23:30:33.232Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/homewardfound-e93a2  
+ 
+[debug] [2018-09-11T23:30:33.496Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-11T23:30:33.502Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/homewardfound-e93a2  
+ 
+[debug] [2018-09-11T23:30:33.755Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Alyssa Williams\Bootcamp_Stuff\Project-1'...
+[info] 
+[debug] [2018-09-11T23:30:33.766Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/1031249661778/clients/_:getWebAppConfig  
+ 
+[debug] [2018-09-11T23:30:33.971Z] <<< HTTP RESPONSE 200
+[info] i  hosting[homewardfound-e93a2]: Serving hosting files from: public
+[info] +  hosting[homewardfound-e93a2]: Local server: http://localhost:5000
