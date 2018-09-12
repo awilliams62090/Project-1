@@ -86,34 +86,20 @@
                                     <img class="img-fluid" id="petimg" src="assets/images/dog.png"></img>
                                     <br></br>
                                 </div>
-                                <div class="col-sm-6">
-                                    <table class="table table-bordered">
-                                        <tbody>
+                                <div class="col-12">
+                                    <table class="table table-bordered" id="myPet">
+                                        <thead>
                                             <h3>Information</h3>
                                             <tr>
-                                                <td style="width:30%">Breed:</td>
-                                                <td id=""></td>
+                                                <th style="width:30%">Image</th>
+                                                <th style="width:30%">Name</th>
+                                                <th style="width:30%">Last Location</th>
+                                                <th style="width:30%">Last Date</th>
+                                                <th style="width:30%">Breed</th>
+                                                <th style="width:30%">Reward:</th>
                                             </tr>
-                                            <tr>
-                                                <td style="width:30%">Last Seen/Date:</td>
-                                                <td id=""></td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width:30%">Owner Name:</td>
-                                                <td id=""></td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width:30%">Phone Number:</td>
-                                                <td id=""></td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width:30%">Email:</td>
-                                                <td id=""></td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width:30%">Reward:</td>
-                                                <td id=""></td>
-                                            </tr>
+                                        </thead>
+                                        <tbody>
                                         </tbody>
                                     </table>
                                     <div class="card-title">
@@ -137,6 +123,7 @@
         crossorigin="anonymous"></script>
     <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
         crossorigin="anonymous"></script>
+    <script src="assets/javascript/profile.js"></script>
     <script>
         $(document).ready(function () {
             $('body').bootstrapMaterialDesign();
