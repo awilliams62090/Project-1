@@ -66,13 +66,15 @@ initApp = function () {
             var uid = user.uid;
             var phoneNumber = user.phoneNumber;
             var providerData = user.providerData;
+            var profileImg = user.providerData[0].photoURL;
 
             user.getIdToken().then(function (accessToken) {
                 document.getElementById('sign-in-status').textContent = 'Welcome,';
-                document.getElementById('btn-login').setAttribute("data-target", "#");
-                document.getElementById('btn-login').setAttribute("onclick", "endSession()");
+                // document.getElementById('btn-login').setAttribute("data-target", "#");
+                // document.getElementById('btn-login').setAttribute("onclick", "endSession()");
                 document.getElementById('sign-in').innerHTML = 'Sign out';
-                document.getElementById('account-details').textContent = email;
+                document.getElementById('account-details').textContent = displayName;
+                document.getElementById('profile-img').innerHTML = '<img class ="img-fluid" src="' + profileImg + '">'
             });
         } else {
             // User is signed out.
