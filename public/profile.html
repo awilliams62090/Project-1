@@ -13,20 +13,15 @@
     <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
     <!-- Firebase authentication -->
-    <script src="assets/javascript/firebase/loginFirebase.js"></script>
     <script src="assets/javascript/firebase/authFirebase.js"></script>
     <!-- application -->
     <script src="assets/javascript/app.js"></script>
-    <!--Google Maps-->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWPyltJHz0zABnZx8q-Kt53EcjLgf5Y-I&callback=initMap">
-    </script>
-
     <!-- Bootstrap MD -->
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
         integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <!-- ajax -->
     <!-- Style overrides -->
     <link rel="stylesheet" href="assets/css/style.css">
-
 </head>
 
 <body>
@@ -105,62 +100,14 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-
-                                        <div class="col-sm-6">
-                                            <table class="table table-bordered">
-                                                <tbody>
-                                                    <h3>Information</h3>
-                                                    <tr>
-                                                        <td style="width:30%">Breed:</td>
-                                                        <td id=""></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:30%">Last Seen/Date:</td>
-                                                        <td id=""></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:30%">Owner Name:</td>
-                                                        <td id=""></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:30%">Phone Number:</td>
-                                                        <td id=""></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:30%">Email:</td>
-                                                        <td id=""></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:30%">Reward:</td>
-                                                        <td id=""></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <div class="card-title">
-                                                <h3>Description</h3>
-                                                <div class="card-text" id="description">...</div>
-                                                =======
-                                            </div>
-                                        </div>
-                            </div>
-                            <!--Map Card-->
-                            <div class="col-md-12 mb-4">
-                                <div class="card card-cascade narrower">
-                                    <div class="view view-cascade gradient-card-header peach-gradient">
-                                        <h5 class="mb-0">Where in the world is my pet?</h5>
-                                    </div>
-                                    <div class="card-body card-body-cascade text-center">
-                                        <div id="mapDiv" class="z-depth-1" style="height: 300px"></div>
-                                    </div>
-                                    <div id="floating-panel">
-                                            <input onclick="clearMarkers();" type=button value="Hide Pet Sightings">
-                                            <input onclick="showMarkers();" type=button value="Show Pet Sightings">
-                                            <input onclick="deleteMarkers();" type=button value="Delete Sightings">
-                                          </div>
+                                    </tbody>
+                                </table>
+                                <div class="card-title">
+                                    <h3>Description</h3>
+                                    <div class="card-text" id="description">...</div>
                                 </div>
                             </div>
                         </div>
-                        <hr />
                     </div>
                     <hr />
                 </div>
@@ -169,21 +116,45 @@
     </div>
 
 
-    </script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U"
         crossorigin="anonymous"></script>
     <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
         crossorigin="anonymous"></script>
     <script src="assets/javascript/profile.js"></script>
-    <script src ="assets/javascript/map.js">
-    </script>
     <script>
         $(document).ready(function () {
-    $('body').bootstrapMaterialDesign();
-    });
+            $('body').bootstrapMaterialDesign();
+
+            var currentURL = window.location.href;
+
+            function updateStatusCallback(response){
+                if (response.status === 'connected'){
+                    console.log('Facebook: logged in and authenticated!');
+                }
+                else {
+                    console.log('Facebook: something went wrong.');
+                }
+                console.log(response);
+            }
+
+            $.ajaxSetup({
+                cache: true
+            });
+            $.getScript('https://connect.facebook.net/en_US/sdk.js', function () {
+                FB.init({
+                    appId: '688935141484475',
+                    version: 'v1.0' // or v2.1, v2.2, v2.3, ...
+                });
+                FB.ui({
+                    method: 'share',
+                    href: currentURL,
+                    }, function(response){});
+                FB.getLoginStatus(updateStatusCallback);
+            });
+        });
     </script>
+
 </body>
 
 </html>
