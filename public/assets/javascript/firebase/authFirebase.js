@@ -43,7 +43,6 @@ var uiConfig = {
     }
 };
 
-
 var userID = '';
 
 function endSession() {
