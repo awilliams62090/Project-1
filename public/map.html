@@ -1,34 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Google Maps</title>
-    <style type="text/css">
-        html {
-            height: 100%
-        }
-
-        body {
-            height: 100%;
-            margin: 0;
-            padding: 0
-        }
-
-        #mapDiv {
-            height: 100%
-        }
-    </style>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWPyltJHz0zABnZx8q-Kt53EcjLgf5Y-I">
+    <title>Document</title>
+    <!-- Firebase 5.4.2 -->
+    <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+    <script type="text/javascript" src="assets/javascript/firebase/initFirebase.js"> </script>
+    <!-- Firebase UI -->
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+    <!-- Firebase authentication -->
+    <script src="assets/javascript/firebase/loginFirebase.js"></script>
+    <script src="assets/javascript/firebase/authFirebase.js"></script>
+    <!-- application -->
+    <script src="assets/javascript/app.js"></script>
+    <!--Google Maps-->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWPyltJHz0zABnZx8q-Kt53EcjLgf5Y-I&libraries=places">
     </script>
     <script type="text/javascript" src="assets/javascript/map.js">
     </script>
+    <!-- Bootstrap MD -->
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+        integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <!-- Style overrides -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
 </head>
 
 <body>
-    <div id="mapDiv"></div>
+
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="index.html">Homeward Found</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="browse.html">Browse</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="submit.html">Submit</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">My Pet</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="float-right">
+                <span id="sign-in-status"></span>
+                <span id="account-details"></span>
+                <button type="button" class="btn btn-primary" id="btn-login" data-toggle="modal" data-target="#accountModal">
+                    <span id="sign-in"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sign-up / sign-in modal -->
+    <div class="modal fade" id="accountModal" tabindex="-1" role="dialog" aria-labelledby="accountModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="accountModalLabel">Account</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="firebaseui-auth-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Map Card-->
+    <div class="col-md-12 mb-4">
+        <div class="card card-cascade narrower">
+            <div class="view view-cascade gradient-card-header peach-gradient">
+                <h5 class="mb-0">Where in the world is my pet?</h5>
+            </div>
+            <div class="card-body card-body-cascade text-center">
+                <div id="mapDiv" class="z-depth-1" style="height: 300px"></div>
+            </div>
+            <a class="btn btn-primary float-right" id="add-loc">Pet Sighting</a>
+        </div>
+    </div>
+
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
+        crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $('body').bootstrapMaterialDesign();
+        });
+    </script>
 </body>
 
 </html>
