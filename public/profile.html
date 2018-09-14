@@ -139,6 +139,7 @@
                 }
                 console.log(response);
             }
+
             var facebookId = '688935141484475';
             $.ajaxSetup({
                 cache: true
@@ -148,15 +149,18 @@
                     appId: facebookId,
                     version: 'v1.0'
                 });
+
                 FB.ui({
                     method: 'feed',
                     link: currentURL,
                     caption: 'Has anyone seen my puppy?'
                 }, function (response) {});
+
                 FB.ui({
                     method: 'send',
                     link: currentURL
                 });
+
                 FB.getLoginStatus(updateStatusCallback);
             });
         });
