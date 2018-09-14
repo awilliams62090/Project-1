@@ -23,6 +23,7 @@ database.ref().on("child_added", function (Snapshot){
             $("<td>").text(Snapshot.val().pet.petType),
             $("<td>").text(Snapshot.val().pet.reward),
         )
+        
     }
     
 // Append the new row to the table

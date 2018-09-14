@@ -82,85 +82,38 @@
                 <div class="card my-4 p-5">
                     <div class="card-body">
                         <h1 class="card-title text-center">Pet Profile</h1>
-                        <div class="row">
-                            <div class="col-sm-6 float-left">
-                                <h3 class="card-title" id="name">Pet Name</h3>
-                                <br></br>
-                                <img class="img-fluid" id="petimg" src="assets/images/dog.png"></img>
-                                <br></br>
-                            </div>
-                            <div class="col-12">
-                                <table class="table table-bordered" id="myPet">
-                                    <thead>
-                                        <h3>Information</h3>
-                                        <tr>
-                                            <th style="width:30%">Image</th>
-                                            <th style="width:30%">Name</th>
-                                            <th style="width:30%">Last Location</th>
-                                            <th style="width:30%">Last Date</th>
-                                            <th style="width:30%">Breed</th>
-                                            <th style="width:30%">Reward:</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-
-                                        <div class="col-sm-6">
-                                            <table class="table table-bordered">
-                                                <tbody>
-                                                    <h3>Information</h3>
-                                                    <tr>
-                                                        <td style="width:30%">Breed:</td>
-                                                        <td id=""></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:30%">Last Seen/Date:</td>
-                                                        <td id=""></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:30%">Owner Name:</td>
-                                                        <td id=""></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:30%">Phone Number:</td>
-                                                        <td id=""></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:30%">Email:</td>
-                                                        <td id=""></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:30%">Reward:</td>
-                                                        <td id=""></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <div class="card-title">
-                                                <h3>Description</h3>
-                                                <div class="card-text" id="description">...</div>
-                                                =======
-                                            </div>
-                                        </div>
-                            </div>
-                            <!--Map Card-->
-                            <div class="col-md-12 mb-4">
-                                <div class="card card-cascade narrower">
-                                    <div class="view view-cascade gradient-card-header peach-gradient">
-                                        <h5 class="mb-0">Where in the world is my pet?</h5>
-                                    </div>
-                                    <div class="card-body card-body-cascade text-center">
-                                        <div id="mapDiv" class="z-depth-1" style="height: 300px"></div>
-                                    </div>
-                                    <div id="floating-panel">
-                                        <input onclick="clearMarkers();" type=button value="Hide Pet Sightings">
-                                        <input onclick="showMarkers();" type=button value="Show Pet Sightings">
-                                        <input onclick="deleteMarkers();" type=button value="Delete Sightings">
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="col">
                         </div>
-                        <hr />
+                        <table class="table" id="myPet">
+                            <thead>
+                                <tr>
+                                    <th style="width:30%">Image</th>
+                                    <th style="width:30%">Name</th>
+                                    <th style="width:30%">Last Location</th>
+                                    <th style="width:30%">Last Date</th>
+                                    <th style="width:30%">Breed</th>
+                                    <th style="width:30%">Reward:</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
                     </div>
-                    <hr />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="card my-4 p-5">
+                    <h1 class="card-title text-center">Where in the world is my pet?</h1>
+                    <div class="card-body text-center">
+                        <div id="mapDiv" class="z-depth-1" style="height: 300px"></div>
+                        <div id="floating-panel">
+                            <input onclick="clearMarkers();" type=button value="Hide Pet Sightings">
+                            <input onclick="showMarkers();" type=button value="Show Pet Sightings">
+                            <input onclick="deleteMarkers();" type=button value="Delete Sightings">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -208,7 +161,7 @@
             });
         });
     </script>
-    <script src ="assets/javascript/map.js"></script>
+    <script src="assets/javascript/map.js"></script>
 
 </body>
 
