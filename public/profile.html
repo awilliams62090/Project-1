@@ -82,6 +82,8 @@
                 <div class="card my-4 p-5">
                     <div class="card-body">
                         <h1 class="card-title text-center">Pet Profile</h1>
+                        <button id="fbShare" class="btn btn-primary">Share</button>
+                        <button id="fbMessage" class="btn btn-primary">Send message</button>
                         <div class="col">
                         </div>
                         <table class="table" id="myPet">
@@ -128,6 +130,51 @@
     <script src="assets/javascript/profile.js"></script>
     <script>
         $(document).ready(function () {
+
+            var facebookId = '688935141484475';
+            var facebookSDKVersion = 'v1.0';
+            $.ajaxSetup({
+                cache: true
+            });
+
+            function initFb(fbId, version) {
+                return FB.init({
+                    appId: fbId,
+                    version: version
+                });
+            }
+
+
+            $('#fbMessage').on('click', function () {
+                $.getScript('https://connect.facebook.net/en_US/sdk.js', function () {
+
+                    initFb(facebookId, facebookSDKVersion);
+
+                    FB.ui({
+                        method: 'send',
+                        link: currentURL
+                    });
+
+                    FB.getLoginStatus(updateStatusCallback);
+                });
+            });
+
+            $('#fbShare').on('click', function () {
+
+                $.getScript('https://connect.facebook.net/en_US/sdk.js', function () {
+
+                    initFb(facebookId, facebookSDKVersion);
+
+                    FB.ui({
+                        method: 'feed',
+                        link: currentURL,
+                        caption: 'Has anyone seen my puppy?'
+                    }, function (response) {});
+
+                    FB.getLoginStatus(updateStatusCallback);
+                });
+            });
+
             $('body').bootstrapMaterialDesign();
             var currentURL = window.location.href;
 
@@ -140,29 +187,6 @@
                 console.log(response);
             }
 
-            var facebookId = '688935141484475';
-            $.ajaxSetup({
-                cache: true
-            });
-            $.getScript('https://connect.facebook.net/en_US/sdk.js', function () {
-                FB.init({
-                    appId: facebookId,
-                    version: 'v1.0'
-                });
-
-                FB.ui({
-                    method: 'feed',
-                    link: currentURL,
-                    caption: 'Has anyone seen my puppy?'
-                }, function (response) {});
-
-                FB.ui({
-                    method: 'send',
-                    link: currentURL
-                });
-
-                FB.getLoginStatus(updateStatusCallback);
-            });
         });
     </script>
     <script src="assets/javascript/map.js"></script>

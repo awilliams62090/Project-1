@@ -1,6 +1,6 @@
 // FirebaseUI config.
 var uiConfig = {
-    signInSuccessUrl: 'profile.html',
+    signInSuccessUrl: 'home.html',
     callbacks: {
         signInSuccessWithAuthResult: function (authResult, redirectUrl) {
             var user = authResult.user;
